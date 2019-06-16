@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Padronagem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts - PT Serif -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <!-- Style -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <section class="container">
+      <!-- Aviso para telas pequenas demais -->
+      <p class="aviso">O conteúdo exige uma tela com pelo menos 768px de largura e 600px de altura</p>
+
+      <div class="modulo-wrapper">
+        <div class="modulo">
+          <p class="modulo__caractere"></p>
+        </div>
+
+        <article class="opcoes">
+          <h1 class="opcoes__titulo">tipografia</h1>
+
+          <div class="tipografia__wrapper">
+            <div class="tipografia__item">
+              <label class="tipografia__label" for="caractere">caractere</label>
+
+              <input class="tipografia__caractere" type="text" name="caractere" id="caractere" maxlength="1" />
+            </div>
+
+            <div class="tipografia__item">
+              <label class="tipografia__label" for="tamanho">tamanho</label>
+
+              <input class="tipografia__tamanho" type="number" name="tamanho" id="tamanho" placeholder="em" min="0"
+                step=".2" />
+            </div>
+          </div>
+
+          <h1 class="opcoes__titulo">posiciona-<br>mento</h1>
+
+          <div class="posicionamento__wrapper">
+            <div class="posicionamento__item">
+              <label class="posicionamento__label" for="topo">topo</label>
+
+              <input class="posicionamento__topo" type="number" name="topo" id="topo" placeholder="px" />
+            </div>
+
+            <div class="posicionamento__item">
+              <label class="posicionamento__label" for="esquerda">esquerda</label>
+
+              <input class="posicionamento__esquerda" type="number" name="esquerda" id="esquerda" placeholder="px" />
+            </div>
+          </div>
+
+          <div class="opcoes__wrapper">
+            <span class="opcoes__limpar">limpar</span>
+            <span class="opcoes__original">original</span>
+
+            <span class="opcoes__salvar">salvar</span>
+            <span class="opcoes__compartilhar">
+              comparti-<br>lhar
+
+              <div class="compartilhar__popup">
+                <p class="compartilhar__label">Link para a padronagem atual</p>
+                <a class="compartilhar__link"></a>
+              </div>
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <div class="padronagem">
+        <!-- Exibe a padronagem -->
+
+        <!-- Aviso para navegadores sem JavaScript -->
+        <noscript>
+          <p>O conteúdo exige que o JavaScript esteja habilitado</p>
+        </noscript>
+      </div>
+    </section>
+  </div>
+
+  <script src="./js/dom-to-image.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

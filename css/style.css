@@ -1,0 +1,351 @@
+/* ==================================================
+   Inicializações
+================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #222;
+  color: #fff;
+}
+
+::selection {
+  background-color: #222;
+  color: #fff;
+}
+
+:root {
+  --dimensao: 140px;
+}
+
+html {
+  font-family: "PT Serif", serif;
+}
+
+input {
+  outline-color: #999;
+  font-family: "PT Serif", serif;
+  font-size: 1em;
+  border: 1px solid #ccc;
+}
+
+noscript {
+  grid-column: 1 / 5;
+  justify-self: center;
+  align-self: center;
+}
+
+.aviso {
+  display: none;
+}
+
+/* ==================================================
+   Estilos principais
+================================================== */
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 20px;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+  opacity: 0;
+  -webkit-animation-name: entrada;
+  animation-name: entrada;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms;
+}
+
+/* Módulo */
+.modulo-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modulo {
+  background-color: black;
+  color: white;
+  width: var(--dimensao);
+  height: var(--dimensao);
+  overflow: hidden;
+  position: relative;
+}
+
+.modulo__caractere {
+  position: absolute;
+  transition: 400ms;
+  cursor: default;
+}
+
+/* Padronagem */
+.padronagem {
+  display: grid;
+  width: calc(4 * var(--dimensao));
+  height: calc(4 * var(--dimensao));
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.padronagem * {
+  transition: 400ms;
+}
+
+/* ==================================================
+   Opções
+================================================== */
+
+.opcoes__titulo {
+  font-size: 1.6em;
+  font-style: italic;
+  font-weight: bold;
+  color: #000;
+  cursor: default;
+}
+
+.opcoes__titulo + * {
+  margin-top: 12px;
+}
+
+* + .opcoes__titulo {
+  margin-top: 22px;
+}
+
+/* Tipografia */
+.tipografia__wrapper {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tipografia__caractere,
+.tipografia__tamanho {
+  width: calc(var(--dimensao) / 2 - 12px / 2);
+  height: 30px;
+  padding: 0 6px;
+}
+
+.tipografia__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tipografia__label {
+  color: #222;
+  font-size: 0.8em;
+  margin-bottom: 4px;
+}
+
+/* Posicionamento */
+.posicionamento__wrapper {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.posicionamento__topo,
+.posicionamento__esquerda {
+  width: calc(var(--dimensao) / 2 - 12px / 2);
+  height: 30px;
+  padding: 0 6px;
+}
+
+.posicionamento__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.posicionamento__label {
+  color: #222;
+  font-size: 0.8em;
+  margin-bottom: 4px;
+}
+
+/* Outras opções */
+.opcoes__wrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 6px 12px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "limpar   salvar"
+    "original compartilhar";
+}
+
+.opcoes__limpar {
+  grid-area: limpar;
+}
+
+.opcoes__original {
+  grid-area: original;
+}
+
+.opcoes__salvar {
+  grid-area: salvar;
+}
+
+.opcoes__compartilhar {
+  grid-area: compartilhar;
+  position: relative;
+}
+
+.opcoes__compartilhar:hover .compartilhar__popup {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  transition: opacity 200ms ease-in-out 0ms, -webkit-transform 0ms ease-in-out 0ms;
+  transition: transform 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms;
+  transition: transform 0ms ease-in-out 0ms, opacity 200ms ease-in-out 0ms, -webkit-transform 0ms ease-in-out 0ms;
+}
+
+.compartilhar__popup {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  transition: opacity 200ms ease-in-out 0ms, -webkit-transform 0ms ease-in-out 200ms;
+  transition: transform 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms;
+  transition: transform 0ms ease-in-out 200ms, opacity 200ms ease-in-out 0ms, -webkit-transform 0ms ease-in-out 200ms;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 100%;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.compartilhar__label {
+  font-style: normal;
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.compartilhar__link {
+  display: inline-block;
+  color: #222;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-family: monospace;
+  transition: 200ms;
+}
+
+.compartilhar__link:hover {
+  color: #000;
+}
+
+.opcoes__limpar,
+.opcoes__original,
+.opcoes__salvar,
+.opcoes__compartilhar {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  color: #888;
+  cursor: pointer;
+  transition: 200ms;
+  font-style: italic;
+}
+
+.opcoes__limpar:hover,
+.opcoes__original:hover,
+.opcoes__salvar:hover,
+.opcoes__compartilhar:hover {
+  color: #222;
+}
+
+/* ==================================================
+   Padronagem
+================================================== */
+
+.modulo-2,
+.modulo-8,
+.modulo-11,
+.modulo-13 {
+  -webkit-transform: rotatez(180deg);
+  transform: rotatez(180deg);
+}
+
+.modulo-3,
+.modulo-5,
+.modulo-10,
+.modulo-16 {
+  -webkit-transform: rotatez(180deg) rotatey(180deg);
+  transform: rotatez(180deg) rotatey(180deg);
+}
+
+.modulo-4,
+.modulo-7,
+.modulo-9,
+.modulo-14 {
+  -webkit-transform: rotatey(180deg);
+  transform: rotatey(180deg);
+}
+
+/* ==================================================
+   Media Queries
+================================================== */
+
+@media screen and (max-width: 767px), screen and (max-height: 599px) {
+  .container {
+    width: 280px;
+    height: auto;
+  }
+
+  .container > * {
+    display: none;
+  }
+
+  .aviso {
+    display: block;
+  }
+}
+
+/* ==================================================
+   Animações
+================================================== */
+
+@-webkit-keyframes entrada {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatey(-40px);
+    transform: translatey(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translatey(-0);
+    transform: translatey(-0);
+  }
+}
+
+@keyframes entrada {
+  0% {
+    opacity: 0;
+    -webkit-transform: translatey(-40px);
+    transform: translatey(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translatey(-0);
+    transform: translatey(-0);
+  }
+}
