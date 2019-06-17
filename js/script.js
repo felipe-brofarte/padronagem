@@ -19,6 +19,13 @@ const salvar = document.querySelector(".opcoes__salvar");
 
 const compartilhar = document.querySelector(".compartilhar__link");
 
+const padronagemOriginal = {
+  caractere: "&",
+  tamanho: 12,
+  topo: 6,
+  esquerda: -18
+};
+
 /* ==================================================
    Funções
 ================================================== */
@@ -125,12 +132,7 @@ function iniciaApp() {
       esquerda: esquerda
     });
   } else {
-    definePadronagem({
-      caractere: "&",
-      tamanho: 12,
-      topo: 6,
-      esquerda: -18
-    });
+    definePadronagem(padronagemOriginal);
   }
 }
 
@@ -160,12 +162,7 @@ limpar.onclick = e => {
 
 // Adiciona event listener ao botão original
 original.onclick = e => {
-  definePadronagem({
-    caractere: "&",
-    tamanho: 12,
-    topo: 6,
-    esquerda: -18
-  });
+  definePadronagem(padronagemOriginal);
 
   atualizaUrl();
 };
