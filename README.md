@@ -2,7 +2,7 @@
 
 Versão interativa de um trabalho de faculdade.
 
-Acesse aqui: [Brofarte - Padronagem](https://brofarte.com/padronagem)
+Acesse aqui: [Padronagem](https://padronagem.felipeog.com.br/)
 
 Enunciado abaixo.
 
