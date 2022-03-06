@@ -19,8 +19,3 @@ Universidade do Estado do Rio de Janeiro - Escola Superior de Desenho Industrial
 Em um A4 horizontal (branco) apresentar um corte de imagem ou composição assimétrica – abstrata, figurativa ou tipográfica – em preto e branco, medindo 5 X 5cm.
 
 Desenvolver um sistema a partir da repetição, rotação ou reflexão desta mesma imagem, de forma a estabelecer uma padronagem composta por 16 módulos (4 X 4), medindo 20 X 20cm.
-
-
-## Preview
-
-[![screenshot-padronagem-felipeog-com-br-2020-12-02-23-43-16.png](https://i.postimg.cc/vmDXr0q5/screenshot-padronagem-felipeog-com-br-2020-12-02-23-43-16.png)](https://postimg.cc/WDLMjwP4)
