@@ -2,7 +2,7 @@
 
 Versão interativa de um trabalho de faculdade.
 
-Acesse aqui: [Padronagem](https://padronagem.felipeog.com.br/)
+Acesse aqui: [Padronagem](https://padronagem.netlify.app)
 
 Enunciado abaixo.
 
